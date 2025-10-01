@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Document</title>
+  <!-- ✅ CSS тільки в <head> -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-logo">
+      <!-- ✅ IMG у <body>, не в <head> -->
+      <img src="assets/logo.png" alt="Логотип" />
+      <span class="header-text">FFD – Fresh Four Devs</span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <nav class="top-nav" aria-label="Головна навігація">
+      <a href="#games">Головна</a>
+      <a href="#games">Ігри</a>
+      <a href="#about">Про нас</a>
+      <a href="#contacts">Контакти</a>
+    </nav>
+
+    <div class="hero-inner">
+      <div class="hero-left">
+        <button class="play-btn" aria-controls="games">▶ Play</button>
+      </div>
+      <div class="hero-right">
+        <div class="logo-square">
+          <img src="assets/logo.png" alt="Логотип" />
+        </div>
+        <h1 class="logo">Fun4Play</h1>
+        <p id="about" class="about">Поки не придумали слоган</p>
+      </div>
+    </div>
+  </section>
+
+  <main id="games" class="games-grid">
+    <button class="game-btn" aria-label="Гра 1">🌑</button>
+    <button class="game-btn" aria-label="Гра 2">🐍</button>
+    <button class="game-btn" aria-label="Гра 3">🕊️</button>
+    <button class="game-btn" aria-label="Гра 4">📀</button>
+    <button class="game-btn" aria-label="Гра 5">в розробці</button>
+    <button class="game-btn" aria-label="Гра 6">в розробці</button>
+    <button class="game-btn" aria-label="Гра 7">в розробці</button>
+    <button class="game-btn" aria-label="Гра 8">в розробці</button>
+  </main>
+
+  <section class="comments-section">
+    <h2>Коментарі гравців</h2>
+    <div id="comments-list">
+      <div class="comment-item"><strong>Гравець:</strong> Коммент (бот)</div>
+      <div class="comment-item"><strong>Anna:</strong> Коммент (бот)</div>
+    </div>
+    <div class="comments-form">
+      <input type="text" id="comment-name" placeholder="Ваше ім'я" />
+      <textarea id="comment-text" placeholder="Ваш коментар"></textarea>
+      <button id="comment-submit">Додати коментар</button>
+    </div>
+  </section>
+
+  <footer id="contacts" class="site-footer">
+    <h3>Контакти розробників</h3>
+    <p>Email: <a href="mailto:info@ffd.com">info@ffd.com</a></p>
+    <p>Dev: Fresh Four Devs</p>
+  </footer>
+
+  <!-- ✅ JS перед </body> -->
+  <script src="index.js"></script>
+</body>
+</html>
