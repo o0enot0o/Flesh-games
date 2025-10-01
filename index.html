@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Document</title>
-  <!-- ✅ CSS тільки в <head> -->
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fun4Play – Браузерні ігри</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="header-logo">
-      <!-- ✅ IMG у <body>, не в <head> -->
-      <img src="assets/logo.png" alt="Логотип" />
+      <img src="assets/Знімок_екрана_2025-09-24_144647-Photoroom-removebg-preview.png" alt="Логотип">
       <span class="header-text">FFD – Fresh Four Devs</span>
     </div>
   </header>
 
-  <section class="hero">
+  <header class="hero">
     <nav class="top-nav" aria-label="Головна навігація">
       <a href="#games">Головна</a>
       <a href="#games">Ігри</a>
@@ -30,33 +28,35 @@
       </div>
       <div class="hero-right">
         <div class="logo-square">
-          <img src="assets/logo.png" alt="Логотип" />
+          <img src="assets/Знімок_екрана_2025-09-24_144647-Photoroom-removebg-preview.png" alt="Логотип">
         </div>
         <h1 class="logo">Fun4Play</h1>
-        <p id="about" class="about">Поки не придумали слоган</p>
+        <p id="about" class="about">
+          Ми створюємо простір для гравців з усього світу. Fun4Play — сучасний портал браузерних ігор: швидко, просто, без зайвих налаштувань. Заходь, обирай гру та отримуй кайф!
+        </p>
       </div>
     </div>
-  </section>
+  </header>
 
   <main id="games" class="games-grid">
-    <button class="game-btn" aria-label="Гра 1">🌑</button>
-    <button class="game-btn" aria-label="Гра 2">🐍</button>
-    <button class="game-btn" aria-label="Гра 3">🕊️</button>
-    <button class="game-btn" aria-label="Гра 4">📀</button>
-    <button class="game-btn" aria-label="Гра 5">в розробці</button>
-    <button class="game-btn" aria-label="Гра 6">в розробці</button>
-    <button class="game-btn" aria-label="Гра 7">в розробці</button>
-    <button class="game-btn" aria-label="Гра 8">в розробці</button>
+    <button class="game-btn" aria-label="Гра 1">🎮</button>
+    <button class="game-btn" aria-label="Гра 2">🚀</button>
+    <button class="game-btn" aria-label="Гра 3">⚔️</button>
+    <button class="game-btn" aria-label="Гра 4">🏎️</button>
+    <button class="game-btn" aria-label="Гра 5">🧩</button>
+    <button class="game-btn" aria-label="Гра 6">⚡</button>
+    <button class="game-btn" aria-label="Гра 7">🐉</button>
+    <button class="game-btn" aria-label="Гра 8">🏀</button>
   </main>
 
   <section class="comments-section">
     <h2>Коментарі гравців</h2>
     <div id="comments-list">
-      <div class="comment-item"><strong>Гравець:</strong> Коммент (бот)</div>
-      <div class="comment-item"><strong>Anna:</strong> Коммент (бот)</div>
+      <div class="comment-item"><strong>Гравець:</strong> Дуже круті ігри! 🔥</div>
+      <div class="comment-item"><strong>Anna:</strong> Чекаю нових релізів 😍</div>
     </div>
     <div class="comments-form">
-      <input type="text" id="comment-name" placeholder="Ваше ім'я" />
+      <input type="text" id="comment-name" placeholder="Ваше ім'я">
       <textarea id="comment-text" placeholder="Ваш коментар"></textarea>
       <button id="comment-submit">Додати коментар</button>
     </div>
@@ -64,11 +64,9 @@
 
   <footer id="contacts" class="site-footer">
     <h3>Контакти розробників</h3>
-    <p>Email: <a href="mailto:info@ffd.com">info@ffd.com</a></p>
+    <p>Email: support@ffd.com</p>
     <p>Dev: Fresh Four Devs</p>
   </footer>
-
-  <!-- ✅ JS перед </body> -->
   <script src="index.js"></script>
 </body>
 </html>
