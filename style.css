@@ -88,18 +88,38 @@ body{
 }
 
 .hero-left{ flex:1; display:flex; align-items:center; justify-content:flex-start; }
-.play-btn{
-  font-size:1.8rem;
-  padding:1rem 1.8rem;
-  border-radius:14px;
-  border:none;
-  cursor:pointer;
-  background:linear-gradient(180deg,var(--blue2),var(--blue1));
-  color:#fff;
-  box-shadow:0 6px 20px rgba(2,10,30,0.4);
-  transition:transform .15s ease, filter .15s;
+.play-btn {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 1rem 2.2rem;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #2BB9D9, #0583F2);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 15px rgba(5, 131, 242, 0.8), 
+              0 0 30px rgba(43, 185, 217, 0.6);
+  transition: transform 0.25s ease, 
+              box-shadow 0.25s ease, 
+              background 0.25s ease;
+  position: relative;
+  overflow: hidden;
 }
-.play-btn:hover{ transform:translateY(-3px); filter:brightness(1.03) }
+
+.play-btn:hover {
+  transform: scale(1.08);
+  background: linear-gradient(135deg, #30C8D9, #1F82BF);
+  box-shadow: 0 0 20px rgba(48, 200, 217, 0.9), 
+              0 0 40px rgba(31, 130, 191, 0.7);
+}
+
+.play-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 10px rgba(5, 131, 242, 0.7);
+}
+
 
 .hero-right{ flex:1; text-align:center; padding:0 1rem; }
 .logo-square{
