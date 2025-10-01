@@ -11,6 +11,7 @@
 
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
+html{ scroll-padding-top: 70px; } /* важливо для fixed header */
 body{
   font-family:var(--font);
   background:var(--bg-dark);
@@ -120,7 +121,6 @@ body{
   box-shadow: 0 0 10px rgba(5, 131, 242, 0.7);
 }
 
-
 .hero-right{ flex:1; text-align:center; padding:0 1rem; }
 .logo-square{
   width:140px;
@@ -168,6 +168,18 @@ body{
   box-shadow: 0 10px 25px rgba(0,0,0,0.7), 0 0 20px rgba(5,131,242,0.8);
   border: 3px solid #30C8D9;
   background: linear-gradient(145deg, #30C8D9, #1F82BF);
+}
+
+.about-section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: center;
+}
+.about-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--blue4);
 }
 
 .comments-section {
@@ -230,6 +242,7 @@ body{
   filter: brightness(1.05);
 }
 
+/* Футер */
 .site-footer {
   margin-top:2rem;
   padding:1.5rem 2rem;

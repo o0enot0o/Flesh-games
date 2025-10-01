@@ -1,24 +1,35 @@
-document.querySelector('.play-btn').addEventListener('click', () => {
-  document.getElementById('games').scrollIntoView({ behavior: 'smooth' });
-});
+document.addEventListener('DOMContentLoaded', () => {
 
-document.querySelectorAll('.game-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    alert(`Ви відкрили гру: ${btn.getAttribute('aria-label') || btn.textContent}`);
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition - 60;
+        const duration = 800;
+        let start = null;
+
+        function step(timestamp) {
+          if (!start) start = timestamp;
+          const progress = timestamp - start;
+          const percent = Math.min(progress / duration, 1);
+
+          const ease = percent < 0.5
+            ? 4 * percent * percent * percent
+            : 1 - Math.pow(-2 * percent + 2, 3) / 2;
+
+          window.scrollTo(0, startPosition + distance * ease);
+
+          if (progress < duration) {
+            requestAnimationFrame(step);
+          }
+        }
+
+        requestAnimationFrame(step);
+      }
+    });
   });
-});
-
-document.getElementById('comment-submit').addEventListener('click', () => {
-  const name = document.getElementById('comment-name').value.trim();
-  const text = document.getElementById('comment-text').value.trim();
-  if (!name || !text) return;
-
-  const commentList = document.getElementById('comments-list');
-  const newComment = document.createElement('div');
-  newComment.classList.add('comment-item');
-  newComment.innerHTML = `<strong>${name}:</strong> <p>${text}</p>`;
-  commentList.prepend(newComment);
-
-  document.getElementById('comment-name').value = '';
-  document.getElementById('comment-text').value = '';
 });
