@@ -6,9 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
-        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+        let targetPosition;
+
+        if(this.getAttribute('href') === '#games') {
+          const rect = target.getBoundingClientRect();
+          targetPosition = window.pageYOffset + rect.top - (window.innerHeight/2) + (rect.height/2);
+        } else {
+          targetPosition = target.getBoundingClientRect().top + window.pageYOffset - 60;
+        }
+
         const startPosition = window.pageYOffset;
-        const distance = targetPosition - startPosition - 60;
+        const distance = targetPosition - startPosition;
         const duration = 800;
         let start = null;
 
@@ -32,9 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
+
   const aboutBar = document.querySelector('.about-bar');
   const aboutModal = document.querySelector('.about-modal');
 
@@ -48,4 +55,55 @@ document.addEventListener('DOMContentLoaded', () => {
       aboutModal.classList.remove('active');
     }
   });
+
+  const playBtn = document.querySelector('.play-btn');
+  const gamesSection = document.querySelector('#games');
+
+  playBtn.addEventListener('click', () => {
+    const rect = gamesSection.getBoundingClientRect();
+    const targetPosition = window.pageYOffset + rect.top - (window.innerHeight/2) + (rect.height/2);
+    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+  });
+
+
+  const commentList = document.getElementById('comments-list');
+  const nameInput = document.getElementById('comment-name');
+  const textInput = document.getElementById('comment-text');
+  const submitBtn = document.getElementById('comment-submit');
+
+ function addComment() {
+  const name = nameInput.value.trim();
+  const text = textInput.value.trim();
+
+  if(!name || !text) return;
+
+
+  const commentItem = document.createElement('div');
+  commentItem.classList.add('comment-item');
+  commentItem.innerHTML = `<strong>${name}:</strong> ${text}`;
+
+
+  commentList.prepend(commentItem);
+
+
+  textInput.value = '';
+}
+
+
+  submitBtn.addEventListener('click', addComment);
+
+  nameInput.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter') {
+      e.preventDefault();
+      addComment();
+    }
+  });
+
+  textInput.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      addComment();
+    }
+  });
+
 });
