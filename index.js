@@ -33,3 +33,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const aboutBar = document.querySelector('.about-bar');
+  const aboutModal = document.querySelector('.about-modal');
+
+
+  aboutBar.addEventListener('click', () => {
+    aboutModal.classList.add('active');
+  });
+
+  aboutModal.addEventListener('click', (e) => {
+    if (e.target === aboutModal) {
+      aboutModal.classList.remove('active');
+    }
+  });
+});
