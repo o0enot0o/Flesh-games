@@ -65,30 +65,26 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: targetPosition, behavior: 'smooth' });
   });
 
-
+  
   const commentList = document.getElementById('comments-list');
   const nameInput = document.getElementById('comment-name');
   const textInput = document.getElementById('comment-text');
   const submitBtn = document.getElementById('comment-submit');
 
- function addComment() {
-  const name = nameInput.value.trim();
-  const text = textInput.value.trim();
+  function addComment() {
+    const name = nameInput.value.trim();
+    const text = textInput.value.trim();
 
-  if(!name || !text) return;
+    if(!name || !text) return;
 
+    const commentItem = document.createElement('div');
+    commentItem.classList.add('comment-item');
+    commentItem.innerHTML = `<strong>${name}:</strong> ${text}`;
 
-  const commentItem = document.createElement('div');
-  commentItem.classList.add('comment-item');
-  commentItem.innerHTML = `<strong>${name}:</strong> ${text}`;
+    commentList.prepend(commentItem);
 
-
-  commentList.prepend(commentItem);
-
-
-  textInput.value = '';
-}
-
+    textInput.value = '';
+  }
 
   submitBtn.addEventListener('click', addComment);
 
@@ -105,5 +101,12 @@ document.addEventListener('DOMContentLoaded', () => {
       addComment();
     }
   });
+
+  const game1Button = document.querySelector('button[aria-label="Гра 1"]');
+  if (game1Button) {
+    game1Button.addEventListener("click", () => {
+      window.open("games/game%20-%201/index.html", "_blank");
+    });
+  }
 
 });
