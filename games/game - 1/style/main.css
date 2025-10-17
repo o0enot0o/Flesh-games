@@ -1,10 +1,8 @@
 :root {
   --bg-dark: #0a0e1a;
-  --grid-line: rgba(0,0,0,0.5);
-  --blue1: #0583F2;
-  --blue2: #1F82BF;
-  --blue3: #2BB9D9;
-  --blue4: #30C8D9;
+  --blue1: #0583f2;
+  --blue3: #2bb9d9;
+  --blue4: #30c8d9;
   --radius: 12px;
   --font: Inter, Arial, sans-serif;
 }
@@ -14,6 +12,7 @@ body {
   font-family: var(--font);
   background-color: var(--bg-dark);
   color: #fff;
+  overflow-x: hidden;
 }
 
 #game {
@@ -42,7 +41,8 @@ body {
   margin-bottom: 10px;
 }
 
-.game-score, .game-highscore {
+.game-score,
+.game-highscore {
   padding: 10px 15px;
   min-width: 160px;
   height: 50px;
@@ -61,6 +61,57 @@ body {
   border-radius: var(--radius);
   border: 10px solid #161618;
   box-shadow: 0px 0px 40px 10px rgba(5, 131, 242, 0.2);
-  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.2'%3E%3Ccircle cx='8' cy='8' r='4' fill='%23525053'/%3E%3C/g%3E%3C/svg%3E%0A");
+  
   padding: 20px;
+}
+
+
+#toggle-control {
+  position: fixed;
+  bottom: 140px;
+  right: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  padding: 5px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+#toggle-control:hover {
+  background-color: rgba(48, 200, 217, 0.2);
+}
+
+#mobile-controls {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  z-index: 999;
+  user-select: none;
+  text-align: center;
+}
+
+.control-row {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+.btn-control {
+  opacity: 0.4;
+  background-color: var(--blue4);
+  border: none;
+  width: 60px;
+  height: 60px;
+  margin: 0 5px;
+  border-radius: 12px;
+  font-size: 32px;
+  color: white;
+  user-select: none;
+  transition: opacity 0.3s ease;
+}
+.btn-control:active {
+  opacity: 1;
+  background-color: var(--blue1);
 }

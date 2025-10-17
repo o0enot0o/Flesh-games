@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style/main.css">
-  <title>Snake 2D Adaptive</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Змійка</title>
+  <link rel="stylesheet" href="style/main.css" />
 </head>
-<body>
 
+<body>
+  
   <div id="game">
     <div class="game-header">
       <div class="game-score">
@@ -20,6 +20,23 @@
     </div>
     <div class="canvas-wrapper">
       <canvas id="game-canvas"></canvas>
+    </div>
+  </div>
+
+  <button id="toggle-control">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="#30C8D9" height="28" width="28" viewBox="0 0 24 24">
+      <path d="M7 2C6.447 2 6 2.447 6 3v18c0 .553.447 1 1 1h10c.553 0 1-.447 1-1v-6h-2v5H8V4h8v5h2V3c0-1.103-.897-2-2-2H7z"/>
+    </svg>
+  </button>
+
+  <div id="mobile-controls">
+    <div class="control-row">
+      <button class="btn-control" data-dir="up">↑</button>
+    </div>
+    <div class="control-row">
+      <button class="btn-control" data-dir="left">←</button>
+      <button class="btn-control" data-dir="down">↓</button>
+      <button class="btn-control" data-dir="right">→</button>
     </div>
   </div>
 
