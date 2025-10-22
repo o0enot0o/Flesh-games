@@ -114,10 +114,22 @@ document.addEventListener('DOMContentLoaded', () => {
       window.open("games/game%20-%203/index.html", "_blank");
     });
   }
-  const game7Button = document.querySelector('button[aria-label="Гра 7"]');
-  if (game7Button) {
-    game7Button.addEventListener("click", () => {
-      window.open("games/game%20-%207/index.html", "_blank");
+  const game5Button = document.querySelector('button[aria-label="Гра 5"]');
+  if (game5Button) {
+    game5Button.addEventListener("click", () => {
+      window.open("games/game%20-%205/index.html", "_blank");
+    });
+  }
+  const game2Button = document.querySelector('button[aria-label="Гра 2"]');
+  if (game2Button) {
+    game2Button.addEventListener("click", () => {
+      window.open("games/game%20-%202/index.html", "_blank");
+    });
+  }
+   const game4Button = document.querySelector('button[aria-label="Гра 4"]');
+  if (game4Button) {
+    game4Button.addEventListener("click", () => {
+      window.open("games/game%20-%204/index.html", "_blank");
     });
   }
 });
