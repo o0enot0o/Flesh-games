@@ -126,4 +126,10 @@ document.addEventListener('DOMContentLoaded', () => {
       window.open("games/game%20-%202/index.html", "_blank");
     });
   }
+   const game4Button = document.querySelector('button[aria-label="Гра 4"]');
+  if (game4Button) {
+    game4Button.addEventListener("click", () => {
+      window.open("games/game%20-%204/index.html", "_blank");
+    });
+  }
 });
