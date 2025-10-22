@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
       e.preventDefault();
 
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
         let targetPosition;
 
-        if(this.getAttribute('href') === '#games') {
+        if (this.getAttribute('href') === '#games') {
           const rect = target.getBoundingClientRect();
-          targetPosition = window.pageYOffset + rect.top - (window.innerHeight/2) + (rect.height/2);
+          targetPosition = window.pageYOffset + rect.top - (window.innerHeight / 2) + (rect.height / 2);
         } else {
           targetPosition = target.getBoundingClientRect().top + window.pageYOffset - 60;
         }
@@ -61,11 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   playBtn.addEventListener('click', () => {
     const rect = gamesSection.getBoundingClientRect();
-    const targetPosition = window.pageYOffset + rect.top - (window.innerHeight/2) + (rect.height/2);
+    const targetPosition = window.pageYOffset + rect.top - (window.innerHeight / 2) + (rect.height / 2);
     window.scrollTo({ top: targetPosition, behavior: 'smooth' });
   });
 
-  
+
   const commentList = document.getElementById('comments-list');
   const nameInput = document.getElementById('comment-name');
   const textInput = document.getElementById('comment-text');
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const name = nameInput.value.trim();
     const text = textInput.value.trim();
 
-    if(!name || !text) return;
+    if (!name || !text) return;
 
     const commentItem = document.createElement('div');
     commentItem.classList.add('comment-item');
@@ -89,14 +89,14 @@ document.addEventListener('DOMContentLoaded', () => {
   submitBtn.addEventListener('click', addComment);
 
   nameInput.addEventListener('keydown', (e) => {
-    if(e.key === 'Enter') {
+    if (e.key === 'Enter') {
       e.preventDefault();
       addComment();
     }
   });
 
   textInput.addEventListener('keydown', (e) => {
-    if(e.key === 'Enter' && !e.shiftKey) {
+    if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       addComment();
     }
@@ -126,10 +126,16 @@ document.addEventListener('DOMContentLoaded', () => {
       window.open("games/game%20-%202/index.html", "_blank");
     });
   }
-   const game4Button = document.querySelector('button[aria-label="Гра 4"]');
+  const game4Button = document.querySelector('button[aria-label="Гра 4"]');
   if (game4Button) {
     game4Button.addEventListener("click", () => {
       window.open("games/game%20-%204/index.html", "_blank");
+    });
+  }
+  const game6Button = document.querySelector('button[aria-label="Гра 6"]');
+  if (game6Button) {
+    game6Button.addEventListener("click", () => {
+      window.open("games/game%20-%206/index.html", "_blank");
     });
   }
 });
