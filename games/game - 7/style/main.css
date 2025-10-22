@@ -1,0 +1,109 @@
+:root {
+  --bg: #0f1115;
+  --card: #161a22;
+  --text: #e8ecf1;
+  --muted: #9aa3af;
+  --accent: #6ee7ff;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+  text-align: center;
+}
+
+header {
+  background: rgba(15, 17, 21, 0.9);
+  padding: 16px;
+  border-bottom: 1px solid #232a35;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.h1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill {
+  background: var(--card);
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #232a35;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid #232a35;
+  border-radius: 10px;
+  padding: 20px;
+  width: 420px;
+}
+
+.bigBtn {
+  display: block;
+  width: 100%;
+  padding: 18px;
+  border: none;
+  background: #1b2330;
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.bigBtn:hover {
+  transform: translateY(-2px);
+  background: #253146;
+}
+
+.shop {
+  margin-top: 25px;
+}
+
+button {
+  background: #2a3241;
+  border: 1px solid #3a4354;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #3c495e;
+}
+
+.muted {
+  color: var(--muted);
+}

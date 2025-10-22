@@ -114,4 +114,10 @@ document.addEventListener('DOMContentLoaded', () => {
       window.open("games/game%20-%203/index.html", "_blank");
     });
   }
+  const game7Button = document.querySelector('button[aria-label="Гра 7"]');
+  if (game7Button) {
+    game7Button.addEventListener("click", () => {
+      window.open("games/game%20-%207/index.html", "_blank");
+    });
+  }
 });

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Idle Clicker Pro</title>
+  <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+  <header>
+    <div class="wrap top">
+      <div class="h1">Idle Clicker Pro ⏱️</div>
+      <div class="stats">
+        <div class="pill">Баланс: <b id="money">0</b></div>
+        <div class="pill">/клик: <b id="perClick">1</b></div>
+        <div class="pill">/сек: <b id="perSec">0</b></div>
+        <div class="pill">Осколки: <b id="shards">0</b></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <button id="clickBtn" class="bigBtn">КЛИКНУТЬ</button>
+      <div class="row">
+        <div class="muted">Всего заработано: <span id="lifetime">0</span></div>
+        <div class="muted">Множитель престижа: <span id="prestigeMult">x1.00</span></div>
+      </div>
+
+      <div class="shop">
+        <h2>Магазин улучшений</h2>
+        <button id="buyAutoClick">Автокликер (цена: <span id="autoCost">50</span>)</button>
+        <button id="buyUpgrade">Улучшение клика (цена: <span id="upgradeCost">100</span>)</button>
+      </div>
+    </section>
+
+    <aside class="card">
+      <h2>Престиж</h2>
+      <p>Сбросить прогресс и получить бонус к доходу.</p>
+      <button id="prestigeBtn">Престиж!</button>
+    </aside>
+  </main>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
