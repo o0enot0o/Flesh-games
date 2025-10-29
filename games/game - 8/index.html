@@ -1,0 +1,32 @@
+<button id="right" style="
+    font-size: 20pt;
+    padding: 10pt;
+">Right</button>
+<p id="hero" style="
+    background-color: grey;
+    font-size: 25pt;
+    padding: 20pt;
+    width: 30%;
+    text-align: center;
+    position: relative;
+    left: 0px
+">Text</p>
+
+<script>
+    let hero = window.document.querySelector('#hero');
+    let rightButton = window.document.querySelector('#right');
+    let rightPosition = 0;
+    const clickHandler = () => {
+        if(hero.style.backgroundColor === 'grey' ){
+            hero.style.backgroundColor = 'blue';
+        } else {
+            hero.style.backgroundColor = 'grey';
+        }
+    }
+    const rightHandler = () => {
+        rightPosition = rightPosition + 20;
+        hero.style.left = `${rightPosition}px `;
+    }
+    hero.onclick = clickHandler;
+    rightButton.onclick = rightHandler;
+</script>
